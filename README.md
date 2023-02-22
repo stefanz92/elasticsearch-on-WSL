@@ -8,7 +8,8 @@ Open your WSL terminal and update the package list:
 sudo apt-get update
 
 Install the OpenJDK 11 runtime environment, which is required to run Elasticsearch:
-sudo apt-get install openjdk-11-jre-headless
+
+```sudo apt-get install openjdk-11-jre-headless```
 
 Download the Elasticsearch Debian package from the official website using wget:
 ```
@@ -24,16 +25,21 @@ To start Elasticsearch as a non-root user, you can create a new user account and
 
 
 Create a new user account:
+
 ```sudo adduser elasticsearch```
 
 Grant ownership of the Elasticsearch installation directory to the new user:
+
 ```sudo chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/```
 
 Grant the new user permission to write to the Elasticsearch data directory:
-```sudo chmod 775 /var/lib/elasticsearch/
+
+```
+sudo chmod 775 /var/lib/elasticsearch/
 sudo chown -R elasticsearch:elasticsearch /var/lib/elasticsearch/
 ```
 
 Start Elasticsearch as the new user:
+
 ```sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch```
 
